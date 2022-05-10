@@ -1,3 +1,16 @@
+# My Notes:
+before form title(with span) and definition
+1 box for name in type text
+1 box for age in type number(18-65)
+1 box for email in type email
+1 box for content in select(movie or series)
+1 box for Movie Type in type of checkbox(Comedie, Action and Romance)
+1 box for Gender in type radio(MAle, Female and Other)
+1 box for Comment in textarea
+1 box for submit button in type submit
+
+
+
 # Objective
 Build a Survey Form that is functionally similar to this: Survey Form
 # Steps to Solution
