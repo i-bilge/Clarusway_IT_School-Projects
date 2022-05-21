@@ -1,0 +1,96 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: #666;
+    height: 100%;
+}
+body{
+    display: block;
+}
+h3{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+span{
+    background-color: black;
+    padding: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    outline: 0.5rem inset purple;
+    outline-offset: 1rem;
+    line-height: 5rem;
+}
+
+.bgImage1, .bgImage2, .bgImage3, .bgImage4, .bgImage5{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;/*That makes the prallax effect*/
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bgImage1{
+    background-image: url("./img/bg.jpg");
+    min-height: 100%;
+}
+.bgImage2{
+    background-image: url("./img/bg2.jpg");
+    min-height: 80%;
+}
+.bgImage3{
+    background-image: url("./img/bg3.jpg");
+    min-height: 80%;
+}
+.bgImage4{
+    background-image: url("./img/bg4.jpg");
+    min-height: 80%;
+}
+.bgImage5{
+    background-image: url("./img/bg.jpg");
+    min-height: 100%;
+}
+.caption{
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    color: white;
+}
+#Logo{
+    width: 30%;
+    margin: 1rem;
+}
+/* #heading{
+
+} */
+
+.Text{
+    text-align: center;
+    padding: 3rem 5rem;
+    display: block;
+}
+#FSDevelopment, #DAnalitcs-MLearning{
+    background-color: rgb(241, 241, 241);
+    color: #666;
+}
+#AWS-DevOps, #Why{
+    background-color: #282e34;
+    color: #ddd;
+}
