@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleTeamwork.css" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="checkout-title">Checkout</h1>
+      </header>
+      <main>
+        <div class="formBoxBig">
+            <form
+            id="chechoutForm"
+            action="result.html"
+            method="GET"
+            target="_blank"
+            >
+                <div class="formBoxes" id="contact">
+                    <h1>Contact information</h1>
+                    <div class="box">
+                    <label for="email">Email</label><br />
+                    <input
+                        type="email"
+                        name="Email"
+                        id="email"
+                        placeholder="Enter your email..."
+                    /><br />
+                    </div>
+                    <div class="box">
+                    <label for="tel">Phone</label><br />
+                    <input
+                        type="tel"
+                        name="Tel"
+                        id="tel"
+                        placeholder="Enter your phone..."
+                    /><br />
+                    </div>
+                </div>
+                <div class="formBoxes" id="shipping">
+                    <h1>Shipping address</h1>
+                    <div class="box">
+                    <label for="name">Full name</label><br />
+                    <input
+                        type="text"
+                        id="name"
+                        name="Name"
+                        placeholder="enter your Full name..."
+                        required
+                    /><br />
+                    </div>
+                    <div class="box">
+                    <label for="address">Address</label><br />
+                    <textarea
+                        name="Address"
+                        id="address"
+                        placeholder="Enter your address..."
+                    ></textarea>
+                    </div>
+                    <div class="box">
+                    <label for="city">City</label><br />
+                    <textarea
+                        name="City"
+                        id="city"
+                        placeholder="Enter your city..."
+                    ></textarea>
+                    </div>    
+                    <div class="countryAndPostal">               
+                        <div class="box" id="coutnryInfo">
+                            <label>Country</label> <br />
+                            <select name="country" id="selectCountry" required="">
+                            <option value="Country">Turkey</option>
+                            <option value="Country">Germany</option>
+                            <option value="Country">USA</option>
+                            <option value="Country">Canada</option>
+                            <option value="Country">UK</option>
+                            </select>
+                        </div>
+                        <div class="box" id="postalCode">
+                            <label for="postCode">Post Code</label><br />
+                            <input
+                            type="number"
+                            id="postCode"
+                            name="PostCode"
+                            placeholder="enter your postal code..."
+                            required
+                            /><br />
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <label></label>
+                    <label for="recordQuestion">
+                        <input
+                        type="checkbox"
+                        name="record"
+                        id="recordQuestion"
+                        value="See"
+                        />
+                        See this information next time
+                    </label>
+                    <br />
+                </div>
+                
+                <button id="btn-submit" type="submit">
+                    Continue
+                </button>
+            </form>
+        </div>
+        <div class="productsBox">
+            <div class="products" id="firstProduct">
+                <img src="./IMG/photo1.png" alt="backbag" style="float: left" />
+                <div class="productInfo">
+                    <h5 class="productNames">Vintage Backbag</h5>
+                    <p class="productPrices">
+                    $54.99    <span class="oldProductPrices"><del>$94.99</del></span>
+                    </p>
+                    
+                    <div class="amounts">
+                        <button>
+                            <i class="fas fa-minus" aria-hidden="true">-</i>
+                        </button>
+                        <p>1</p>
+                        <button>
+                            <i class="fas fa-plus" aria-hidden="true">+</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="products" id="secondProduct">
+                <img src="./IMG/photo2.png" alt="leviShoes" style="float: left" />
+                <div class="productInfo">
+                    <h5 class="productNames">Levi Shoes</h5>
+                    <p class="productPrices">
+                        $74.99    <span class="oldProductPrices"><del>$124.99</del></span>
+                    </p>
+                    <div class="amounts">
+                        <button>
+                            <i class="fas fa-minus" aria-hidden="true">-</i>
+                        </button>
+                        <p>1</p>
+                        <button>
+                            <i class="fas fa-plus" aria-hidden="true">+</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="orderSum">
+                <hr>
+                <div id="shippingOrder">
+                <p class="orderTypes">Shipping</p>
+                <p class="orderPrice">$19</p>
+                </div>
+                <hr>
+                <div id="totalOrder">
+                <p class="orderTypes">Total</p>
+                <p class="orderPrices">$148.98</p>
+                </div>
+            </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

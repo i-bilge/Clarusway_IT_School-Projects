@@ -1,0 +1,89 @@
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+}
+#checkout-title{
+    text-align: center;
+}
+.formBoxBig{
+    margin: 10px auto;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    display: relative;
+}
+.productsBox{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+    border-radius: 3%;
+    padding: 10px;
+}
+.box input, textarea{
+    display: block;
+    width: 90%;
+}
+
+.countryAndPastal{
+    display: flex;
+    /* justify-content: space-between; */
+    /* flex-direction: column; */
+}
+#postalCode{
+    width: 100px;
+    /* float: right; */
+}
+.formBoxes{
+    width: 40vw;
+}
+#coutnryInfo{
+    width: 30px;
+    /* float: left; */
+}
+#btn-submit{
+    width: 10%;
+    padding: 14px 0;
+    border-radius: 10px;
+    background-color: #f2994a;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    position: absolute;
+    margin: auto;
+    position: center;
+}
+
+.productInfo {
+
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;  /* Mon, */ 
+    width: 100%;
+
+}
+
+.amounts {
+
+    border-radius: 5px;
+    border: 1px solid rgb(136, 136, 136);
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 25px;
+
+}
+
+
+img{
+    border-radius: 10px;
+    width: 17%;
+    margin: 0px 20px 0px 0px; 
+
+    
+}
+
+
