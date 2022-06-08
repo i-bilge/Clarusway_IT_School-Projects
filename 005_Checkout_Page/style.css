@@ -256,6 +256,3 @@ main {
     content: "Product Total: $";
   }
   
-  .product:first-child {
-    border: 2px solid red
-  }

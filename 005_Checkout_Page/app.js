@@ -1,3 +1,6 @@
+//here first we are creating the logic for a product. And then we are implementing this locig for all of them wit "forEach" iteration.
+//And at the end connecting them with prices
+
 const productDivs = document.querySelectorAll(".product");
 
 productDivs.forEach((productDiv) => {
@@ -7,6 +10,7 @@ productDivs.forEach((productDiv) => {
         "#product-quantity"
       );
     const targetedElementClassName = event.target.className;
+    //here we are using event.target to get the class name of + and - button to use it
 
     if (targetedElementClassName === "fas fa-plus") {
       // add
@@ -23,8 +27,7 @@ productDivs.forEach((productDiv) => {
           productQuantity.innerText++;
         }
       }
-
-      calculateProductTotal(productQuantity);
+      calculateProductTotal(productQuantity); // And here it is for "remove" button
       calculateCartTotal();
     } else if (targetedElementClassName === "remove-product") {
       //remove
@@ -36,7 +39,7 @@ productDivs.forEach((productDiv) => {
     }
   });
 });
-
+// here we are defining the fonction to take elements from Price panel
 const calculateProductTotal = (productQuantity) => {
   const productInfo = productQuantity.parentElement.parentElement;
   const productPrice = productInfo.querySelector("strong").innerText;
@@ -44,7 +47,7 @@ const calculateProductTotal = (productQuantity) => {
   const totalPrice = productPrice * productQuantity.innerText;
   productTotal.innerText = totalPrice.toFixed(2);
 };
-
+// And here we are defining the fonction to change Price panel
 const calculateCartTotal = () => {
   const productTotalPrices = document.querySelectorAll(".product-line-price"); // it is an array
   let subTotal = 0;
