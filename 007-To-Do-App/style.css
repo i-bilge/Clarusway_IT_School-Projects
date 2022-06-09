@@ -1,0 +1,49 @@
+body{
+    background-image: url("./pexels-mohi-syed-137219.jpg");
+    box-sizing: border-box;
+}
+h1{
+    color: azure;
+    font-family: cursive;
+    font-style: oblique;
+    text-align: center;
+}
+#container{
+    background-color: rgba(242, 15, 15, 0.281);
+    border-radius: 10px;
+    margin: 10px 20px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    min-width: 1000px;
+    min-height: auto;
+}
+#toDoList{
+    background-color: rgba(242, 14, 14, 0.405);
+    border-radius: 10px;
+    height: 65vh;
+    margin: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 900px;
+    min-height: auto;
+}
+#addingDuty{
+    background-color: rgba(242, 18, 18, 0.405);
+    border-radius: 10px;
+    height: 10vh;
+    margin: 10px 50px;
+    display: flex;
+    justify-content: space-around;
+}
+#newOne{
+    margin: auto;
+    width: 60%;
+    height: 30%;
+}
+#btnAddNewOne{
+    margin: auto;
+}
+.overLine{
+    text-decoration: line-through;
+}
