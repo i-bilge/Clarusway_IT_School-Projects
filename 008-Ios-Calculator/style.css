@@ -3,24 +3,42 @@
 }
 #screen{
     margin: auto;
-    width: 25vw;
-    height: 45vw;
+    width: 23vw;
+    height: 40vw;
     background-color: black;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 6fr;
+    min-width: 230px;
+    min-height: 400px;
 }
 #calculation{
-    padding: 0px 10px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 0%;
+    padding: 5px 10px;
     text-align: end;
     color: gray;
     font-size: 150%;
 }
 #output{
-    padding: 0px 10px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 0%;
+    padding: 5px 10px;
     text-align: end;
     color: white;
     font-size: 350%;
+}
+#buttonArea{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: center;
+    padding: 0%;
+    margin-bottom: 1vh;
+    min-width: 240px;
+    min-height: 280px;
 }
 .butons{
     width: 5vw;
@@ -30,6 +48,8 @@
     border: none;
     text-align: center;
     margin: 2px;
+    min-width: 50px;
+    min-height: 50px;
 }
 .butons:hover{
     opacity: 0.7;
@@ -37,10 +57,7 @@
 #zero{
     width: 10vw;
     border-radius: 40px;
-}
-#buttonArea{
-    text-align: center;
-    padding: 0%;
+    min-width: 100px;
 }
 .additionalOperations{
     color: black;
@@ -51,6 +68,10 @@
     background-color: rgb(44, 44, 44);
 }
 .operations{
+    color: white;
+    background-color: orange;
+}
+.equal{
     color: white;
     background-color: orange;
 }
