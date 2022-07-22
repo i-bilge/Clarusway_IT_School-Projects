@@ -27,3 +27,12 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 30px;
+  border-radius: 5px;
+}
+
