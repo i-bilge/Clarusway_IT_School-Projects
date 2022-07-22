@@ -1,9 +1,14 @@
-import React from 'react'
-// import 'Detail.css'
+import './Details.scss'
 
 function Details() {
+
   return (
-    <div>Details</div>
+    <div className="DetailsPage" style={{ backgroundColor: "#5A86B8"}}>
+      <div className="dish">
+        DETAILS
+      </div>
+    </div>
   )
 }
-export default Details
+  
+  export default Details;

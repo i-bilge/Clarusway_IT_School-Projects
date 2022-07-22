@@ -1,0 +1,16 @@
+.DetailsPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .dish{
+        background-color: bisque;
+        width: 50vw;
+        min-height: 50vh;
+        height: auto;
+        border-radius: 7px;
+        text-align: center;
+    }
+}

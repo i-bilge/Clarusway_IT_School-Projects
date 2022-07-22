@@ -1,0 +1,35 @@
+body{
+    background-color: aqua;
+}
+.aboutArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+
+    img{
+        height: 40vh;
+    }
+    .aboutEntry{
+        text-shadow: 5px 5px  lightgray;
+        .entrySpan{
+            color: white;
+        }
+    }
+    .aboutText{
+        width: 30vw;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 40px;
+        p{
+            text-align: right;
+            font-size: 20px;
+        }
+        a{
+            text-align: right;
+            color: white;
+            font-size: 15px;
+        }
+    }
+}

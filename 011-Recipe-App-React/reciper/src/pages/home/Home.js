@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "../../components/Recipe";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const APP_ID = "5ce67892";
@@ -29,6 +30,7 @@ function Home() {
     setQuery(search);
     setSearch("");
   };
+
 
   return (
     <div className="HomePage" style={{ backgroundColor: "#5A86B8"}}>

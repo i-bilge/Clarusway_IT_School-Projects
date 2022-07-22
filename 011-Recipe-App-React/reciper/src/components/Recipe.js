@@ -1,7 +1,9 @@
 import React from 'react'
 import style from './style/recipe.module.css'
+import { useNavigate } from 'react-router-dom'
 
-function Recipe({title, calories, image, ingredients}) {
+function Recipe({title, calories, image, ingredients, giveDetails}) {
+  let navigate = useNavigate();
   return (
     <div className={style.recipe}>
         <h1>{title}</h1>
@@ -11,7 +13,8 @@ function Recipe({title, calories, image, ingredients}) {
             ))}
         </ol>
         <p>{calories}</p>
-        <img src={image} alt=''/>
+        <img style={{width: "200px", height: "200px"}} src={image} alt=''/>
+        <button onClick={ () => navigate("/details")}>View More</button>
     </div>
   )
 }

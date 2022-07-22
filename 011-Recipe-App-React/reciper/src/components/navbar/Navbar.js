@@ -1,8 +1,8 @@
 import React from 'react'
 import './Navbar.scss';
-import About from '../../pages/about/About';
-import Details from '../../pages/details/Details';
-import { Link } from 'react-router-dom';
+// import About from '../../pages/about/About';
+// import Details from '../../pages/details/Details';
+// import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
