@@ -1,36 +1,32 @@
-.DetailsPage{
+.loginContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 
-    .dish{
-        background-color: rgba(255, 228, 196, 0.5);
-        width: 50vw;
-        min-height: 50vh;
-        height: auto;
-        border-radius: 7px;
-        text-align: center;
+    .loginForm{
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 228, 196, 0.5);
+        border-radius: 0% 60% 0% 60%;
+        text-align: center;
+        height: 50vh;
+        margin: 40px 70px 50px 70px;
+        padding: 40px;
 
-        img{
-            margin: 20px;
+        input{
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            min-height: 25px;
         }
-        .info{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-            font-style: italic;
-
-            .dishLabel{
-                color: white;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: large;
-                font-style: italic;
+        button{
+            width: 100px;
+            margin: 20p;
+            :hover{
+                background-color: bisque;
+                color: royalblue;
             }
         }
     }

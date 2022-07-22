@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Recipe from "../../components/Recipe";
+import RecipeCard from "./RecipeCard";
+import SearchBar from "./SearchBar";
 
 function Home() {
   const APP_ID = "5ce67892";
@@ -10,7 +11,6 @@ function Home() {
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
-
   const  getSearch = async (e) => {
     e.preventDefault();
     const response = await fetch(
@@ -21,34 +21,18 @@ function Home() {
     console.log("getsearch execute")
   };
 
-
   return (
     <div className="HomePage" style={{ backgroundColor: "rgba(75, 184, 184. 0,5)"}}>
-      <form onSubmit={getSearch} className="searchForm">
-              <input
-                className="searchBar"
-                type="text"
-                value={search}
-                onChange={updateSearch}
-              />
-              <button className="searchBtn" type="submit">
-                SEARCH
-              </button>
-            </form>
-            <div className="recipes">
-              {recipes.map((recipe) => (
-                <Recipe
-                  key={recipe.recipe.label}
-                  recipe={recipe.recipe}
-                  // title={recipe.recipe.label}
-                  // calories={recipe.recipe.calories}
-                  // image={recipe.recipe.image}
-                  // ingredients={recipe.recipe.ingredients}
-                />
-              ))}
-            </div>
+      <h3>Hey, Welcome!!!</h3>
+      <SearchBar 
+      getSearch={ getSearch }
+      search={ search}
+      updateSearch={ updateSearch}
+      />
+      <RecipeCard 
+      recipes={ recipes}
+      />
     </div>
   )
-}
-  
-  export default Home;
+}  
+export default Home;

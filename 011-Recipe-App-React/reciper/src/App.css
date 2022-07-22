@@ -4,7 +4,6 @@ body{
 .App {
   min-height: 100vh;
   text-align: center;
-  background-color:rgba(18, 49, 143, 0.207);
   background-image: url('./assets/bgPhoto-ratapan-anantawat.jpg');
 }
 .searchForm{
@@ -20,7 +19,7 @@ body{
 }
 .searchBtn{
   background-color: rgba(255, 255, 255, 0.845);
-  color: rgba(65, 105, 225, 0.218);
+  color: rgba(65, 105, 225);
   border: none;
   padding: 10px 20px;
 }
@@ -38,5 +37,8 @@ body{
   justify-content: space-around;
   min-height: 30px;
   border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.636);
+  font-weight: bold;
+  font-style: oblique;
 }
 

@@ -11,11 +11,12 @@ function App() {
   return (
     <div className="App">
       <nav className='navbar'>
-        <Link to="/" style={{color: "black", textDecoration: "none"}}>Home</Link>
-        <Link to="/about" style={{color: "black", textDecoration: "none"}}>About</Link>
-        <Link to="/details" style={{color: "black", textDecoration: "none"}}>Details</Link>
-        <Link to="/login" style={{color: "black", textDecoration: "none"}}>Login</Link>
+        <Link to="/" style={{color: "white", textDecoration: "none"}}>Home</Link>
+        <Link to="/about" style={{color: "white", textDecoration: "none"}}>About</Link>
+        <Link to="/details" style={{color: "white", textDecoration: "none"}}></Link>
+        <Link to="/login" style={{color: "white", textDecoration: "none"}}>Login</Link>
       </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
