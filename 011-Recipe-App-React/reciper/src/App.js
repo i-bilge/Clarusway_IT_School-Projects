@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 
 function App() {
   return (
+  //here we are defining a navbar with 'link'ing to 'path's. Then we re gonna use these paths for routing(<Route><Route/> <Routes/>):
     <div className="App">
       <nav className='navbar'>
         <Link to="/" style={{color: "white", textDecoration: "none"}}>Home</Link>
@@ -16,7 +17,7 @@ function App() {
         <Link to="/details" style={{color: "white", textDecoration: "none"}}></Link>
         <Link to="/login" style={{color: "white", textDecoration: "none"}}>Login</Link>
       </nav>
-
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

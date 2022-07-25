@@ -7,7 +7,7 @@ function Home() {
   const APP_KEY = "de0648c0b1fea868537453f6e2edceb1";
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-
+  
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <div className="HomePage" style={{ backgroundColor: "rgba(75, 184, 184. 0,5)"}}>
-      <h3>Hey, Welcome!!!</h3>
+      <h3>Hey,<span></span> Welcome!!!</h3>
       <SearchBar 
       getSearch={ getSearch }
       search={ search}

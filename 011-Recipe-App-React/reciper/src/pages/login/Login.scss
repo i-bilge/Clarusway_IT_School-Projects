@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .loginContainer{
     display: flex;
     flex-direction: column;
@@ -42,6 +45,7 @@
         min-height: 50px;
         align-items: center;
         margin: auto;
+        margin-top: 20px;
         button{
             width: 80px;
             height: 30px;

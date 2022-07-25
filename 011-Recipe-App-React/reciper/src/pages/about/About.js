@@ -11,7 +11,7 @@ function About() {
         <p>Hi, I am Ismail</p>
         <p>I am a Full-Stack Developer who have especially fun to create user interfaces. In this app i did use React and Sass.</p>
         <p>Here you can enjoy the Recipe App. Have fun!</p>
-        <a href="iismailbilge@gmail.com" style={{textDecoration:"none"}}>SEND ME E-MAIL(iismailbilge@gmail)</a>
+        <a href="mailto:iismailbilge@gmail.com" style={{textDecoration:"none"}}>SEND ME E-MAIL</a>
       </div>
     </div>
   )
