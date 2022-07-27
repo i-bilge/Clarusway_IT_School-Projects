@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card() {
+function Card(movie) {
   return (
     <>
         <div className='movie'>
@@ -8,7 +8,7 @@ function Card() {
             <div className='movie-details'>
                 <div className='box'>
                     <h4 className='title'>Movie Title</h4>
-                    <p className='rating'>info here</p>
+                    <p className='rating'>9,5</p>
                 </div>
                 <div className='overview'>
                     <h1>
