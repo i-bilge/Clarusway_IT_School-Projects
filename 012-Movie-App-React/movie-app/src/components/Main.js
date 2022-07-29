@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react'
 import Header from './Header';
 import Container from './Container';
 
-let API_key="&api_key=5e5ba60b460ceadbd75b3baff60a87de";
+let API_key="api_key=5e5ba60b460ceadbd75b3baff60a87de";
 let base_url="https://api.themoviedb.org/3";
-let url= base_url+"/discover/movie?sort_by=popularity.desc"+API_key;
+let url= base_url+"/discover/movie?"+API_key;
+let imageBaseUrl = "http://image.tmdb.org/t/p/w500/";
 
 function Main() {
     const [movieData, setMovieData] = useState([]);
@@ -30,6 +31,7 @@ function Main() {
     <Container 
     movieData={movieData}
     search={search} 
+    imageBaseUrl={imageBaseUrl}
     />
     </>
   )

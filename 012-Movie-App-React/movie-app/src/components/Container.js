@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-function Container({movieData, search}) {
+function Container({imageBaseUrl,movieData, search}) {
   if ({search}!=="") {
     movieData = movieData.filter(movie => movie.original_title.toLowerCase().includes(search.toLowerCase()));
   }
@@ -14,6 +14,7 @@ function Container({movieData, search}) {
                 <Card 
                 movieData={e}
                 search={search}
+                imageBaseUrl={imageBaseUrl}
                 />
             )
           })

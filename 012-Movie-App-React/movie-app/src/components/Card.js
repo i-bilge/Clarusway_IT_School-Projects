@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Card({movieData, search}) {
+function Card({movieData, search, imageBaseUrl}) {
 return (
     <div className='movie'>
-        <img src='images/poster.jpg' alt="poster" className='poster' />
+        <img src={imageBaseUrl+movieData.poster_path} alt="poster" className='poster' />
         <div className='movie-details'>
             <div className='box'>
                 <h4 className='title'>{movieData.original_title}</h4>
