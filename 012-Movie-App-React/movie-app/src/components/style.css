@@ -24,11 +24,11 @@ body{
 nav ul {
     display: flex;
 }
-nav ul li{
+nav ul .Lists{
     list-style: none;
     margin-right: 1rem;
 }
-nav ul li a{
+nav ul .Lists a{
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
@@ -36,7 +36,7 @@ nav ul li a{
     padding: 0.2rem 0.6rem;
     position: relative;
 }
-nav ul li a::before{
+nav ul .Lists a::before{
     content: "";
     position: absolute;
     top: -10px;
@@ -47,15 +47,15 @@ nav ul li a::before{
     background-color: var(--primary-color);
     transition: all 0.5s ease-in-out;
 }
-nav ul li a:hover:before{
+nav ul .Lists a:hover:before{
     width: 100%;
 }
-nav ul li a:focus{
+nav ul .Lists a:focus{
     background-color: var(--primary-color);
     opacity: 0.2px;
     border-radius: 20px;
 }
-nav ul li a:focus::before{
+nav ul .Lists a:focus::before{
     width: 0%;
 }
 .search-btn{
@@ -165,7 +165,7 @@ nav ul li a:focus::before{
         display: flex;
         flex-direction: column;
     }
-    nav ul li{
+    nav ul .Lists{
         padding-top: 10px;
     }
     .search-btn{

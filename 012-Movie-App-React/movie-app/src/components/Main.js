@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './Header';
 import Container from './Container';
 
@@ -24,14 +25,14 @@ function Main() {
     }, [url_set])
   return (
     <>
-    <Header 
-    search={search}
-    updateSearch={updateSearch}
-    />
-    <Container 
-    movieData={movieData}
-    search={search} 
-    imageBaseUrl={imageBaseUrl}
+      <Header 
+      search={search}
+      updateSearch={updateSearch}
+      />
+      <Container 
+      movieData={movieData}
+      search={search} 
+      imageBaseUrl={imageBaseUrl}
     />
     </>
   )
