@@ -12,11 +12,9 @@ const Form = () => {
         addInfo({
             name, tel, gender
         })
-       
-
         setName("")
         setTel("")
-        setGender("")
+        setGender(undefined)
     };
 
   return (
@@ -24,20 +22,23 @@ const Form = () => {
         <h1>CONTACT FORM</h1>
         <h2>ADD CONTACT</h2>
         <div className='formArea'>
-                <label>Fullname</label>
+                <label>👤</label>
                 <input placeholder='Fullname' 
+                required
                 value={name} 
                 onChange={(e) => setName(e.target.value)}
                 />
 
                 <label>📞</label>
                 <input placeholder='Phone Number' 
+                required
                 value={tel} 
                 onChange={(e) => setTel(e.target.value)}
                 />
 
-                <label htmlFor='genders'>🧬Gender</label>
+                <label htmlFor='genders'>🧬</label>
                 <select name='genders' id='genders'
+                required
                 value={gender} 
                 onChange={(e) => setGender(e.target.value)}
                 >
