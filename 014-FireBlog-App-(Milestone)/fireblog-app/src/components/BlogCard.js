@@ -63,11 +63,24 @@ const BlogCard = (props) => {
 
 
   return (
+    
     <Box p={3} component={Paper} elevation={3}>
       <Typography variant="h4">Contents</Typography>
 
       <Box sx={{ height: 400 }}>
-        <DataGrid
+      {console.log(contacts)}
+      {contacts.map((contact) => {
+        return(
+          <div key={contact.id}>
+            <img src={contact.url} alt={contact.title} />
+            <h3>{contact.title}</h3>
+
+          </div>
+        )
+      })}
+
+
+        {/* <DataGrid
           columns={columns}
           rows={contacts.map((contact) => ({
             id: contact.id,
@@ -83,7 +96,7 @@ const BlogCard = (props) => {
               deleteContact(params.row.id);
             }
           }}
-        />
+        /> */}
       </Box>
     </Box>
   )
