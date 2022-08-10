@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logOut } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContext";
+import AddNew from "../pages/AddNew";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ const Navbar = () => {
         <div className="container-fluid">
           <Link to={"/"} className="navbar-brand text-white">
             <h4>Fireblog App</h4>
+          </Link>
+          <Link to={"/add"} className="navbar-brand text-white">
+            <h6>Add New One</h6>
           </Link>
           <div className="buttons text-white align-items-center">
             {currentUser ? (

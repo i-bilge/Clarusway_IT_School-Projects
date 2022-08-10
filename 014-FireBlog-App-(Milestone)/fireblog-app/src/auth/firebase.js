@@ -10,6 +10,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 import { firebaseConfig } from "./ApiKey";
 // HERE I AM IMPORTING MY CONFIG INFOS FROM ANOTHER FILE. AND I AM NOT SHARING IT. YOU HAVE TO USE YOUR INFOS:
@@ -19,6 +20,7 @@ import { firebaseConfig } from "./ApiKey";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+export const db = getFirestore(app);
 
 export const createUser = async (email, password, displayName) => {
     try {
