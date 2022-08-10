@@ -1,0 +1,36 @@
+1. Planing to create 2 components => Form, Contacts
+2. Will use material UI for the UI Layout and components
+3. Will use Firebase realtime database to store the data (CRUD)
+
+Production steps
+1. Create the form component.
+2. See if you can console log the form inputs correctly.
+3. Create a firebase database.
+4.Send the data to the database. (C)
+5. Read the data from the database and console log it. (R)
+6. Create contacts component
+7. Time to state management 
+    a. 3 fields => different useStates or a single useState
+8. Do not repeat yourself => create a handleChange function
+9.TIME FOR FIREBASE
+10. Create a web app => create a firestore db => initilaize it 
+11. db => collections(users, friends, messages) => documents(Omer, Henry, Daniel, Ismail)
+12. C => okay Create
+12. R => okay Read
+13. DataGrid component matches column field value inside row
+14. Edit and Delete Column
+15. In order to reset the inputs, added value attribute to them
+16. I need to have access setUSerInfo from COntacts, so I lifted the state to the App component
+
+Material UI Notes
+1. styling can be done via sx props
+2. TextField for input fields
+3. Select for dropdown
+4. Simple container like div => Box
+5. We need to install mui icons seperately 
+
+TODO: 
+1. ADD ERROR MESSAGE (SNACKBAR AND ALERT IN MATERIL UI)
+2. ADD A NEW COLUMN FOR CREATED
+3. ADD A NEW COLUMN FOR UPDATED IF THERE IS AN UPDATED
+4. A CONFIRMATION MODAL BEFORE DELETING (LOOK FOR DIALOG COMPONENT IN MUI)
