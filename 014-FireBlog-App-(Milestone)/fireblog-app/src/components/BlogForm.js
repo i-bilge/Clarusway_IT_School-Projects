@@ -11,9 +11,9 @@ import {
   Skeleton,
   Paper,
 } from "@mui/material";
-import PersonIcon from "@mui/icons-material/Person";
-import CallIcon from "@mui/icons-material/Call";
-//--------------------------------------------------
+import AbcIcon from '@mui/icons-material/Abc';
+import LinkIcon from '@mui/icons-material/Link';
+import NotesIcon from '@mui/icons-material/Notes';//--------------------------------------------------
 import React from 'react'
 import { updateContact, createContact } from '../auth/operations'
 
@@ -29,7 +29,7 @@ const BlogForm = (props) => {
     } catch (error) {
       console.log("Contact creation error: ", error);
     }
-    setUserInfo({ name: "", phone: "", gender: "" });
+    setUserInfo({ title: "", url: "", explanation:"" });
     setIsEdit(false);
     setIsLoading(false);
   };
@@ -46,48 +46,47 @@ const BlogForm = (props) => {
           {isLoading && <Skeleton />}
           <Stack spacing={3}>
             <TextField
-              label="Name"
+              label="Title"
               required
               variant="outlined"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PersonIcon />
+                    <AbcIcon />
                   </InputAdornment>
                 ),
               }}
-              value={userInfo.name}
-              onChange={(event) => handleChange("name", event.target.value)}
+              value={userInfo.title}
+              onChange={(event) => handleChange("title", event.target.value)}
             />
             <TextField
-              label="Phone Number"
+              label="URL"
               required
               variant="outlined"
-              type="number"
-              value={userInfo.phone}
-              onChange={(event) => handleChange("phone", event.target.value)}
+              value={userInfo.url}
+              onChange={(event) => handleChange("url", event.target.value)}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <CallIcon />
+                    <LinkIcon />
                   </InputAdornment>
                 ),
               }}
             />
-            <FormControl fullWidth>
-              <InputLabel>Gender</InputLabel>
-              <Select
-                required
-                value={userInfo.gender}
-                label="Gender"
-                // onChange={handleChange}
-                onChange={(event) => handleChange("gender", event.target.value)}
-              >
-                <MenuItem value={"female"}>Female</MenuItem>
-                <MenuItem value={"male"}>Male</MenuItem>
-                <MenuItem value={"nfts"}>Not Prefer To Say</MenuItem>
-              </Select>
-            </FormControl>
+            <TextField
+              label="Explanation"
+              required
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <NotesIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={userInfo.explanation}
+              onChange={(event) => handleChange("explanation", event.target.value)}
+            />
             <Button type="submit" variant="outlined">
               {isEdit ? "Edit" : "Add"}
             </Button>

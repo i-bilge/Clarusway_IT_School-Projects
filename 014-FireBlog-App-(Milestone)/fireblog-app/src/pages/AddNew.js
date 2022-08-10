@@ -6,9 +6,9 @@ import BlogCard from '../components/BlogCard';
 
 const AddNew = () => {
   const [userInfo, setUserInfo] = useState({
-    name: "",
-    phone: "",
-    gender: "",
+    title: "",
+    url: "",
+    explanation: "",
   });
   const [isEdit, setIsEdit] = useState(false)
     const [isLoading, setIsLoading] = useState(false);

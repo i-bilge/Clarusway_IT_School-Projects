@@ -31,9 +31,9 @@ const BlogCard = (props) => {
   }, []);
   //------------------------------------------------
   const columns = [
-    { field: "name", headerName: "Name", flex: 0.3 },
-    { field: "phone", headerName: "Phone", flex: 0.3 },
-    { field: "gender", headerName: "Gender", flex: 0.3 },
+    { field: "title", headerName: "Title", flex: 0.3 },
+    { field: "url", headerName: "URL", flex: 0.3 },
+    { field: "explanation", headerName: "Explanation", flex: 0.9 },
     {
       field: "edit_column",
       headerName: "Edit",
@@ -64,7 +64,7 @@ const BlogCard = (props) => {
 
   return (
     <Box p={3} component={Paper} elevation={3}>
-      <Typography variant="h4">Contacts</Typography>
+      <Typography variant="h4">Contents</Typography>
 
       <Box sx={{ height: 400 }}>
         <DataGrid
