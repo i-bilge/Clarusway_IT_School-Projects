@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 //---
 import { collection, onSnapshot, query } from "firebase/firestore";
@@ -9,9 +9,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { deleteContact } from "../auth/operations";
 import { async } from "@firebase/util";
+import { AuthContext } from "../context/AuthContext";
 
 export function MovieDetail({ setUserInfo, setIsEdit, isLoading}) {
 
+  const { currentUser } = useContext(AuthContext);
   const {state} = useLocation()
   console.log(state.contact.data.title)
   const { id } = useParams();
@@ -34,13 +36,21 @@ export function MovieDetail({ setUserInfo, setIsEdit, isLoading}) {
         alt={state.contact.data.title}
       />
       <h4>{state.contact.data.explanation}</h4>
-
-      <button style={{borderRadius:"50%"}} name="edit_column" className="editBtn" onClick={clickHandler}>Edit<br/>
+      <>
+      {currentUser ? (
+        <>
+        <button style={{borderRadius:"50%"}} name="edit_column" className="editBtn" onClick={clickHandler}>Edit<br/>
         <EditIcon />
       </button>  
       <button style={{borderRadius:"50%"}} name="delete_column" className="deleteBtn" onClick={clickHandler}>Delete<br/>
         <DeleteIcon />
       </button>  
+        </>
+            ) : (
+              ""
+            )}
+      </>
+      
 
       <li className="list-group-item">
         <Link to={-1} className="card-link">

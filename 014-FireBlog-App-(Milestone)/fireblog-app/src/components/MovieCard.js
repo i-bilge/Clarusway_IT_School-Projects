@@ -71,9 +71,9 @@ const MovieCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_p
       className="movie"
       // make onclick later
       onClick={() =>
-        currentUser
-          ? navigate("details/" + contact.data.title, {state: {contact}})
-          : alert("Please log in to see details...")
+        // currentUser?
+          navigate("details/" + contact.data.title, {state: {contact}})
+          // : alert("Please log in to see details...")
       }
     >
       <img

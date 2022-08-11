@@ -17,14 +17,15 @@ const Navbar = () => {
           <Link to={"/"} className="navbar-brand text-white">
             <h4>Fireblog App</h4>
           </Link>
-          <Link to={"/add"} className="navbar-brand text-white">
-            <h6>Add New One</h6>
-          </Link>
           <div className="buttons text-white align-items-center">
             {currentUser ? (
-              <h5 className="mb-0 text-capitalize">
-                {currentUser?.displayName}
-              </h5>
+              <button className="mb-0 text-capitalize"
+              onClick={() =>
+                  navigate("profile/")
+              }
+              >
+              {currentUser?.displayName}
+              </button>
             ) : (
               <button
                 type="button"
@@ -35,6 +36,7 @@ const Navbar = () => {
               </button>
             )}
             {currentUser ? (
+              <>
               <button
                 type="button"
                 className="ms-2 btn btn-outline-light"
@@ -42,6 +44,15 @@ const Navbar = () => {
               >
                 Logout
               </button>
+
+              <button
+                type="button"
+                className="ms-2 btn btn-outline-light"
+                onClick={() => navigate("/add")}
+              >
+                Add New
+              </button>
+              </>
             ) : (
               <button
                 type="button"
