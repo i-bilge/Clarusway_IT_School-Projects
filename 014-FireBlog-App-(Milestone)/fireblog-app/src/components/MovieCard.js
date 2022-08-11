@@ -18,7 +18,7 @@ const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) 
       // make onclick later
       onClick={() =>
         currentUser
-          ? navigate("details/" + id)
+          ? navigate("details/" + contact.data.title, {state: {contact}})
           : alert("Please log in to see details...")
       }
     >
@@ -30,7 +30,7 @@ const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) 
         <h5>{contact.data.title}</h5>
       </div>
       <div className="movie-over">
-        <h2>Overview</h2>
+        <h2>Content</h2>
         <p>{contact.data.explanation}</p>
       </div>
       <CardActions disableSpacing>

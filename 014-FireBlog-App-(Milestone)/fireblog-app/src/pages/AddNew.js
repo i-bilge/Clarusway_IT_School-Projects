@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from "react";
-import { Grid, Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 import BlogForm from '../components/BlogForm'
-import BlogCard from '../components/BlogCard';
 
 const AddNew = () => {
   const [userInfo, setUserInfo] = useState({
@@ -15,20 +14,16 @@ const AddNew = () => {
 
   return (
     <Grid
-        container
         sx={{
           width: "80%",
           margin: "auto",
           height: "100%",
           alignItems: "center",
+          marginTop: 10,
         }}
-        spacing={3}
       >
         <Grid item xs={5} sx={{ justifyContent: "center" }}>
           <BlogForm userInfo={userInfo} setUserInfo={setUserInfo} isEdit={isEdit} setIsEdit={setIsEdit} isLoading={isLoading} setIsLoading={setIsLoading}/>
-        </Grid>
-        <Grid item xs={7} sx={{ justifyContent: "center" }}>
-          <BlogCard setUserInfo={setUserInfo} setIsEdit={setIsEdit} isLoading={isLoading}/>
         </Grid>
       </Grid>
   )

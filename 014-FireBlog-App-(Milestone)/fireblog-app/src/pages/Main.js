@@ -8,13 +8,13 @@ import { collection, onSnapshot, query } from "firebase/firestore";
 
 // const API_KEY = HERE I AM IMPORTING MY KEY FROM ANOTHER FILE. AND I AM NOT SHARING IT. <OU HAVE TO USE YOUR KEY.
 // const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
-const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
+// const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+// const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
-const Main = () => {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const { currentUser } = useContext(AuthContext);
+const Main = ({ setUserInfo, setIsEdit, isLoading }) => {
+  // const [movies, setMovies] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const { currentUser } = useContext(AuthContext);
 
   // const { setUserInfo, setIsEdit, isLoading } = props;
   const [contacts, setContacts] = useState([]);
@@ -39,28 +39,28 @@ const Main = () => {
   //   getMovies(FEATURED_API);
   // }, []);
 
-  const getMovies = (API) => {
-    axios
-      .get(API)
-      .then((res) => setMovies(res.data.results))
-      .catch((err) => console.log(err));
-  };
+  // const getMovies = (API) => {
+  //   axios
+  //     .get(API)
+  //     .then((res) => setMovies(res.data.results))
+  //     .catch((err) => console.log(err));
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (searchTerm && currentUser) {
-      getMovies(SEARCH_API + searchTerm);
-    } else if (!currentUser) {
-      alert("Please log in to search a movie...");
-    } else {
-      alert("Please enter text...");
-    }
-    setSearchTerm("");
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (searchTerm && currentUser) {
+  //     getMovies(SEARCH_API + searchTerm);
+  //   } else if (!currentUser) {
+  //     alert("Please log in to search a movie...");
+  //   } else {
+  //     alert("Please enter text...");
+  //   }
+  //   setSearchTerm("");
+  // };
 
   return (
     <>
-      <form className="search" onSubmit={handleSubmit}>
+      {/* <form className="search" onSubmit={handleSubmit}>
         <input
           type="search"
           className="search-input"
@@ -69,7 +69,7 @@ const Main = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button type="submit">Search</button>
-      </form>
+      </form> */}
 {      console.log(contacts)
 }      <div className="d-flex justify-content-center flex-wrap ">
         {contacts.map((contact) => (

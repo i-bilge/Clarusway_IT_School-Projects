@@ -1,10 +1,6 @@
 import {
   Box,
   TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Stack,
   InputAdornment,
   Button,
@@ -60,7 +56,7 @@ const BlogForm = (props) => {
               onChange={(event) => handleChange("title", event.target.value)}
             />
             <TextField
-              label="URL"
+              label="Image URL"
               required
               variant="outlined"
               value={userInfo.url}
