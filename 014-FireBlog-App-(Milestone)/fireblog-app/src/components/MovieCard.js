@@ -1,27 +1,16 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
-const defaultImage =
-  "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
+import CardActions from '@mui/material/CardActions';
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
 
 const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) => {
-  // console.log(props);
-  // const { title, poster_path, overview, vote_average, id } = props;
   const navigate = useNavigate();
 
   const { currentUser } = useContext(AuthContext);
 
-  const setVoteClass = (vote) => {
-    if (vote >= 8) {
-      return "green";
-    } else if (vote >= 6) {
-      return "orange";
-    } else {
-      return "red";
-    }
-  };
 
   return (
     <div
@@ -39,17 +28,19 @@ const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) 
       />
       <div className="d-flex align-items-baseline justify-content-between p-1 text-white">
         <h5>{contact.data.title}</h5>
-        {/* check for current user later */}
-        {currentUser ? (
-          <span className={`tag ${setVoteClass(vote_average)}`}>
-            {vote_average}
-          </span>
-        ) : null}
       </div>
       <div className="movie-over">
         <h2>Overview</h2>
         <p>{contact.data.explanation}</p>
       </div>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
     </div>
   );
 };
