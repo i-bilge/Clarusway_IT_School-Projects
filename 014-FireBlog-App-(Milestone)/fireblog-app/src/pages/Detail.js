@@ -11,7 +11,7 @@ import { deleteContact } from "../auth/operations";
 import { async } from "@firebase/util";
 import { AuthContext } from "../context/AuthContext";
 
-export function MovieDetail({ setUserInfo, setIsEdit, isLoading}) {
+export function Detail({ setUserInfo, setIsEdit, isLoading}) {
 
   const { currentUser } = useContext(AuthContext);
   const {state} = useLocation()
