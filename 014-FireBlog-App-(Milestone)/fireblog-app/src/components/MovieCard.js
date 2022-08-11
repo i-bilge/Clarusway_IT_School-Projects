@@ -6,7 +6,7 @@ const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const defaultImage =
   "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
-const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
+const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) => {
   // console.log(props);
   // const { title, poster_path, overview, vote_average, id } = props;
   const navigate = useNavigate();
@@ -34,11 +34,11 @@ const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
       }
     >
       <img
-        src={poster_path ? IMG_API + poster_path : defaultImage}
-        alt={title}
+        src={contact.data.url}
+        alt={contact.data.title}
       />
       <div className="d-flex align-items-baseline justify-content-between p-1 text-white">
-        <h5>{title}</h5>
+        <h5>{contact.data.title}</h5>
         {/* check for current user later */}
         {currentUser ? (
           <span className={`tag ${setVoteClass(vote_average)}`}>
@@ -48,7 +48,7 @@ const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
       </div>
       <div className="movie-over">
         <h2>Overview</h2>
-        <p>{overview}</p>
+        <p>{contact.data.explanation}</p>
       </div>
     </div>
   );

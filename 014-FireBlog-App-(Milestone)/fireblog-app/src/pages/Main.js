@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import { AuthContext } from "../context/AuthContext";
 import { API_KEY } from "../auth/ApiKey";
+import { db } from "../auth/firebase";
+import { collection, onSnapshot, query } from "firebase/firestore";
 
 // const API_KEY = HERE I AM IMPORTING MY KEY FROM ANOTHER FILE. AND I AM NOT SHARING IT. <OU HAVE TO USE YOUR KEY.
 // const API_KEY = process.env.REACT_APP_TMDB_KEY;
@@ -14,9 +16,28 @@ const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { currentUser } = useContext(AuthContext);
 
+  // const { setUserInfo, setIsEdit, isLoading } = props;
+  const [contacts, setContacts] = useState([]);
+//-----------------------------------------------------
   useEffect(() => {
-    getMovies(FEATURED_API);
+    const unSub = onSnapshot(
+      query(collection(db, "contacts")),
+      (querySnapshot) => {
+        const userInfoArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        setContacts(userInfoArray);
+      }
+    );
+
+    return () => {
+      unSub();
+    };
   }, []);
+  // useEffect(() => {
+  //   getMovies(FEATURED_API);
+  // }, []);
 
   const getMovies = (API) => {
     axios
@@ -49,9 +70,10 @@ const Main = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div className="d-flex justify-content-center flex-wrap ">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} {...movie} />
+{      console.log(contacts)
+}      <div className="d-flex justify-content-center flex-wrap ">
+        {contacts.map((contact) => (
+          <MovieCard contact={contact} key={contact.id} {...contact} />
         ))}
       </div>
     </>
