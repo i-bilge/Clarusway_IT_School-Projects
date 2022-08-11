@@ -78,9 +78,7 @@ const BlogCard = (props) => {
           </div>
         )
       })}
-
-
-        {/* <DataGrid
+        <DataGrid
           columns={columns}
           rows={contacts.map((contact) => ({
             id: contact.id,
@@ -96,7 +94,7 @@ const BlogCard = (props) => {
               deleteContact(params.row.id);
             }
           }}
-        /> */}
+        />
       </Box>
     </Box>
   )
