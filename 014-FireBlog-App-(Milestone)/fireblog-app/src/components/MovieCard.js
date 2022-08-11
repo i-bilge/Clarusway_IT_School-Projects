@@ -1,17 +1,71 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
+import { deleteContact } from "../auth/operations";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../auth/firebase";
 
-const MovieCard = ({ contact, title, poster_path, overview, vote_average, id }) => {
+const MovieCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_path, overview, vote_average, id }) => {
+
+  const [contacts, setContacts] = useState([]);
   const navigate = useNavigate();
 
   const { currentUser } = useContext(AuthContext);
 
+  useEffect(() => {
+    const unSub = onSnapshot(
+      query(collection(db, "contacts")),
+      (querySnapshot) => {
+        const userInfoArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        setContacts(userInfoArray);
+      }
+    );
 
+    return () => {
+      unSub();
+    };
+  }, []);
+
+  const columns = [
+    { field: "name", headerName: "Name", flex: 0.3 },
+    { field: "phone", headerName: "Phone", flex: 0.3 },
+    { field: "gender", headerName: "Gender", flex: 0.3 },
+    {
+      field: "edit_column",
+      headerName: "Edit",
+      flex: 0.3,
+      renderCell: () => {
+        return (
+          <IconButton>
+            <EditIcon />
+          </IconButton>
+        );
+      },
+    },
+    {
+      field: "delete_column",
+      headerName: "Delete",
+      flex: 0.3,
+      renderCell: () => {
+        return (
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+        );
+      },
+    },
+  ];
+
+//-----------------------------------------------------------------------------
   return (
     <div
       className="movie"
