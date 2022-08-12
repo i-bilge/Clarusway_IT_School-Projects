@@ -15,13 +15,13 @@ const Navbar = () => {
           </Link>
           <div className="buttons text-white align-items-center">
             {currentUser ? (
-              <button className="mb-0 text-capitalize"
+              <h5 className="profileName"
               onClick={() =>
                   navigate("profile/")
               }
               >
-              {currentUser?.displayName}
-              </button>
+              {currentUser?.displayName.toUpperCase()}
+              </h5>
             ) : (
               <button
                 type="button"
