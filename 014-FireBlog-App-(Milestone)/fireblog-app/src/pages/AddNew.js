@@ -10,7 +10,7 @@ const AddNew = () => {
     explanation: "",
   });
   const [isEdit, setIsEdit] = useState(false)
-    const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Grid

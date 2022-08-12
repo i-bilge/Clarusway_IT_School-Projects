@@ -14,12 +14,10 @@ import React from 'react'
 import { updateContact, createContact } from '../auth/operations'
 import { useNavigate } from "react-router-dom";
 
-const BlogForm = (props) => {
+const BlogForm = ({ userInfo, setUserInfo, isEdit, setIsEdit, isLoading, setIsLoading }) => {
+
   const navigate = useNavigate();
-
-  const { userInfo, setUserInfo, isEdit, setIsEdit, isLoading, setIsLoading } =
-    props;
-
+  
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
