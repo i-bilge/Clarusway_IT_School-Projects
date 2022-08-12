@@ -12,8 +12,11 @@ import LinkIcon from '@mui/icons-material/Link';
 import NotesIcon from '@mui/icons-material/Notes';//--------------------------------------------------
 import React from 'react'
 import { updateContact, createContact } from '../auth/operations'
+import { useNavigate } from "react-router-dom";
 
 const BlogForm = (props) => {
+  const navigate = useNavigate();
+
   const { userInfo, setUserInfo, isEdit, setIsEdit, isLoading, setIsLoading } =
     props;
 
@@ -28,6 +31,7 @@ const BlogForm = (props) => {
     setUserInfo({ title: "", url: "", explanation:"" });
     setIsEdit(false);
     setIsLoading(false);
+    navigate("/");
   };
 
   const handleChange = (inputType, value) => {
@@ -83,7 +87,8 @@ const BlogForm = (props) => {
               value={userInfo.explanation}
               onChange={(event) => handleChange("explanation", event.target.value)}
             />
-            <Button type="submit" variant="outlined">
+            <Button type="submit" variant="outlined"
+            >
               {isEdit ? "Edit" : "Add"}
             </Button>
           </Stack>
