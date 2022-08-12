@@ -19,44 +19,42 @@ export function Detail({ setUserInfo, setIsEdit, isLoading}) {
   const { id } = useParams();
 
   const clickHandler = async (e) => {
-      if (e.name === "edit_column") {
-        setIsEdit(true);
-        setUserInfo(e.state);
-      } else if (e.name === "delete_column") {
-        deleteContact(e.state.id);
+      if (e.target.name === "edit_column") {
+        console.log(e.target.name)
+        // setIsEdit(true);
+        // setUserInfo(e.state);
+      } else if (e.target.name === "delete_column") {
+        console.log(e.target.name)
+        // deleteContact(e.state.id);
       }
     }
 
 //-------------------------------------------------------------------------------
   return (
-    <div className="container py-5" style={{backgroundColor: "rgba(255, 0, 0, 0.5)", borderRadius: "40px", textAlign: "center"}}>
+    <div className="container py-5" style={{backgroundColor: "rgba(255, 0, 0, 0.5)", borderRadius: "40px", textAlign: "center", width:"400px", marginTop:"5%"}}>
       <h1>{id}</h1>
-      <img
-        src={state.contact.data.url}
-        alt={state.contact.data.title}
-      />
+        <img
+        style={{width:"350px", height:"500px", borderRadius:"10px"}}
+            src={state.contact.data.url}
+            alt={state.contact.data.title}
+          />
       <h4>{state.contact.data.explanation}</h4>
       <>
-      {currentUser ? (
-        <>
-        <button style={{borderRadius:"50%"}} name="edit_column" className="editBtn" onClick={clickHandler}>Edit<br/>
-        <EditIcon />
-      </button>  
-      <button style={{borderRadius:"50%"}} name="delete_column" className="deleteBtn" onClick={clickHandler}>Delete<br/>
-        <DeleteIcon />
-      </button>  
-        </>
-            ) : (
-              ""
-            )}
+          {currentUser ? (
+          <>
+            <button style={{borderRadius:"50%", width:"60px"}} name="edit_column" className="editBtn" onClick={clickHandler}>Edit
+            </button>  
+            <button style={{borderRadius:"50%", width:"60px"}} name="delete_column" className="deleteBtn" onClick={clickHandler}>Delete</button>  
+          </>
+          ) : (
+            ""
+          )}
       </>
-      
-
-      <li className="list-group-item">
+      <p style={{margin:"5px"}}>
         <Link to={-1} className="card-link">
           Go Back
         </Link>
-      </li>
+      </p>
     </div> 
   );
 }

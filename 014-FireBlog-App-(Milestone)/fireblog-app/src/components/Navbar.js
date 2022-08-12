@@ -20,7 +20,7 @@ const Navbar = () => {
                   navigate("profile/")
               }
               >
-              {currentUser?.displayName.toUpperCase()}
+              {currentUser?.displayName}
               </h5>
             ) : (
               <button

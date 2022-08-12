@@ -11,7 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../auth/firebase";
 
-const MovieCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_path, overview, vote_average, id }) => {
+const PostCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_path, overview, vote_average, id }) => {
 
   const [contacts, setContacts] = useState([]);
   const navigate = useNavigate();
@@ -69,7 +69,6 @@ const MovieCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_p
   return (
     <div
       className="movie"
-      // make onclick later
       onClick={() =>
         // currentUser?
           navigate("details/" + contact.data.title, {state: {contact}})
@@ -99,4 +98,4 @@ const MovieCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_p
   );
 };
 
-export default MovieCard;
+export default PostCard;

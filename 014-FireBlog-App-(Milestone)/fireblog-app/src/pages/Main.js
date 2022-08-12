@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import MovieCard from "../components/MovieCard";
+import PostCard from "../components/PostCard";
 import { AuthContext } from "../context/AuthContext";
 import { API_KEY } from "../auth/ApiKey";
 import { db } from "../auth/firebase";
@@ -73,7 +73,7 @@ const Main = ({ setUserInfo, setIsEdit, isLoading }) => {
 {      console.log(contacts)
 }      <div className="d-flex justify-content-center flex-wrap ">
         {contacts.map((contact) => (
-          <MovieCard contact={contact} key={contact.id} {...contact} />
+          <PostCard contact={contact} key={contact.id} {...contact} />
         ))}
       </div>
     </>
