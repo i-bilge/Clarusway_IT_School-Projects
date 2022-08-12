@@ -7,7 +7,7 @@ import { Typography, Box, IconButton, Paper } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { deleteContact } from "../auth/operations";
+import { deleteContact, updateContact } from "../auth/operations";
 import { async } from "@firebase/util";
 import { AuthContext } from "../context/AuthContext";
 
@@ -22,17 +22,17 @@ export function Detail({ setUserInfo, setIsEdit, isLoading}) {
       if (e.target.name === "edit_column") {
         console.log(e.target.name)
         // setIsEdit(true);
-        // setUserInfo(e.state);
+        // setUserInfo(id);
       } else if (e.target.name === "delete_column") {
-        console.log(e.target.name)
-        // deleteContact(e.state.id);
+        console.log(e.target.name, id)
+        deleteContact(id);
       }
     }
 
 //-------------------------------------------------------------------------------
   return (
     <div className="container py-5" style={{backgroundColor: "rgba(255, 0, 0, 0.5)", borderRadius: "40px", textAlign: "center", width:"400px", marginTop:"5%"}}>
-      <h1>{id}</h1>
+      <h1>{state.contact.data.title}</h1>
         <img
         style={{width:"350px", height:"500px", borderRadius:"10px"}}
             src={state.contact.data.url}

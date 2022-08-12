@@ -71,7 +71,7 @@ const PostCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_pa
       className="movie"
       onClick={() =>
         // currentUser?
-          navigate("details/" + contact.data.title, {state: {contact}})
+          navigate("details/" + contact.id, {state: {contact}})
           // : alert("Please log in to see details...")
       }
     >

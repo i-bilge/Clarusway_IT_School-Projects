@@ -20,5 +20,10 @@ import {
   };
   
   export const deleteContact = async (id) => {
-    await deleteDoc(doc(db, "contacts", id));
+    try{
+      const res = await deleteDoc(doc(db, "contacts", id));
+      console.log(res)
+    }
+    catch(error){console.log(error)}
+    
   };
