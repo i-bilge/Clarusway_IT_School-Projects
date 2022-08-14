@@ -40,7 +40,7 @@ export function Detail({ setUserInfo, setIsEdit, isLoading}) {
           />
       <h4>{state.contact.data.explanation}</h4>
       <>
-          {currentUser ? (
+          {currentUser && (currentUser.displayName === state.contact.data.creator) ? (
           <>
             <button style={{borderRadius:"50%", width:"60px"}} name="edit_column" className="editBtn" onClick={clickHandler}>Edit
             </button>  
