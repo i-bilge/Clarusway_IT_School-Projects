@@ -6,12 +6,13 @@ import {
     collection,
     Timestamp,
   } from "firebase/firestore";
-  import {db} from "./firebase";
+  import {auth, db} from "./firebase";
   
   export const createContact = async (userInfo) => {
     await addDoc(collection(db, "contacts"), {
       ...userInfo,
       created: Timestamp.now(),
+      creator: auth.currentUser.displayName
     });
   };
   export const updateContact = async (user) => {

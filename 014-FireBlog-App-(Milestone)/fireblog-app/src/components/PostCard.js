@@ -9,7 +9,7 @@ import { deleteContact } from "../auth/operations";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { collection, onSnapshot, query } from "firebase/firestore";
-import { db } from "../auth/firebase";
+import { auth, db } from "../auth/firebase";
 
 const PostCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_path, overview, vote_average, id }) => {
 
@@ -94,8 +94,12 @@ const PostCard = ({ setUserInfo, setIsEdit, isLoading, contact, title, poster_pa
           <ShareIcon />
         </IconButton>
       </CardActions>
+      <p
+      style={{fontSize:"15px", fontStyle:"italic"}}
+      >Created By: {contact.data.creator}</p>
     </div>
   );
 };
+console.log("userInfo: ", auth.currentUser);
 
 export default PostCard;
