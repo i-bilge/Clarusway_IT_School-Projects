@@ -73,7 +73,7 @@ const Main = ({ setUserInfo, setIsEdit, isLoading }) => {
 {      console.log(contacts)
 }      <div className="d-flex justify-content-center flex-wrap ">
         {contacts.map((contact) => (
-          <PostCard contact={contact} key={contact.id} {...contact} />
+          <PostCard contact={contact} key={contact.id} {...contact} setIsEdit={setIsEdit} setUserInfo={setUserInfo}/>
         ))}
       </div>
     </>

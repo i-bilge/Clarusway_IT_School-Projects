@@ -3,14 +3,14 @@ import { useState } from "react";
 import { Grid } from "@mui/material";
 import BlogForm from '../components/BlogForm'
 
-const AddNew = () => {
-  const [userInfo, setUserInfo] = useState({
-    title: "",
-    url: "",
-    explanation: "",
-  });
-  const [isEdit, setIsEdit] = useState(false)
-  const [isLoading, setIsLoading] = useState(false);
+const AddNew = ({userInfo, setUserInfo, isEdit, setIsEdit, isLoading, setIsLoading}) => {
+  // const [userInfo, setUserInfo] = useState({
+  //   title: "",
+  //   url: "",
+  //   explanation: "",
+  // });
+  // const [isEdit, setIsEdit] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Grid

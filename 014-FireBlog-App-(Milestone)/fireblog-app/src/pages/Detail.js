@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 //---
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../auth/firebase";
@@ -17,15 +17,17 @@ export function Detail({ setUserInfo, setIsEdit, isLoading}) {
   const {state} = useLocation()
   console.log(state.contact.data.title)
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const clickHandler = async (e) => {
       if (e.target.name === "edit_column") {
         console.log(e.target.name)
-        // setIsEdit(true);
-        // setUserInfo(id);
+        setIsEdit(true);
+        setUserInfo("editted");
       } else if (e.target.name === "delete_column") {
         console.log(e.target.name, id)
         deleteContact(id);
+        navigate("/");
       }
     }
 
